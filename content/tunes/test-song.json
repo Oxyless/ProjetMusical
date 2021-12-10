@@ -1,0 +1,9 @@
+{
+  "title": "Test Song",
+  "subtitle": "D blues",
+  "measure": "4/4",
+  "tone": "D",
+  "bars": [
+    [ "\"D-7\"B,CDEFGABcdefga" ]
+  ]
+}

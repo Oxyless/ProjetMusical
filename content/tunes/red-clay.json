@@ -1,0 +1,12 @@
+{
+  "title": "Red Clay",
+  "subtitle": "A Minor",
+  "measure": "4/4",
+  "tone": "Amin",
+  "bars": [
+    [ "|:\"A-11\"z8", "\"G-11\"z8", "\"Bb9sus\"z8", "\"Bb9sus\"z8:|", "z2 z (a" ],
+    [ "|:\"A-11\"a)gag edc(d", "\"G-11\"d3) (cc4)", "\"Bb9sus\"z _B c_e =f2 dc", "\"D9sus\"g2 ed ab1/2c'1/2 d'2" ],
+    [ "\"A-11\"z2 z (d' d')c'1/2a1/2 gd", "\"G-11\"edA(d d) (c3", "\"Bb9sus\"(c8)", "\"D9sus\"c4)zz2a" ],
+    [ "|:\"A-11\"z4 e4", "\"G-11\"z2 z (dd4)", "\"Bb9sus\"z2 _e2 z2 =f2", "\"D9sus\"z2g2za3:|"]
+  ]
+}

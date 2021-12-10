@@ -1,0 +1,14 @@
+{
+  "title": "Sidewinder",
+  "subtitle": "",
+  "measure": "4/4",
+  "tone": "?",
+  "bars": [
+    [ "|:\"B7\"z2^d2\"C7\"zez2", "z2^d2zez2", "zA _B2 c2 d2", "A_BA(GG4)" ],
+    [ "\"B7\"z2^d2\"C7\"zez2", "z2^d2zez2", "zA _B2 c2 d2", "^dec_B z ^F3"],
+    [ "\"E7\"=F2 ^g2\"F7\"zaz2", "z2 ^g2zaz2", "zd _ef gfed", "fcd(_e _(e)G)FG"],
+    [ "\"B7\"c2^d2\"C7\"zez2", "z2^d2zez2", "zG A_B c d3", "ze f^f g a3"],
+    [ "\"D-7\"z2f2\"G7\"z g z2", "z2 f2 z g z2", "zd e2 f2 ^f2", "^fg^f^c z c Gc"],
+    [ "\"B7\"c2^d2\"C7\"zez2", "z2^d2zez2", "\"C7\"z2zG1/2_B1/2 cc c1/2G1/2B", "c2 z (_BB)GFG:|" ]
+  ]
+}
