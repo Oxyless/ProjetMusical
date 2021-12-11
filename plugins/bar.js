@@ -3,7 +3,6 @@ import Chord from './chord'
 export default class Bar {
   constructor(bar) {
     this.bar = bar
-    this.chords = this.extractChords()
   }
 
   toAbc() {
@@ -11,8 +10,10 @@ export default class Bar {
   }
 
   toAbcChords() {
-    if (this.chords) {
-      const abc = this.chords.map(chord => chord.toABc(8 / this.chords.length)).join(" ")
+    const chords = this.extractChords()
+
+    if (chords) {
+      const abc = chords.map(chord => chord.toABc(8 / chords.length)).join(" ")
       return abc
     } else {
       return "z8"

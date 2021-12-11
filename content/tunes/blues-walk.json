@@ -1,11 +1,14 @@
 {
   "title": "Blues Walk",
-  "subtitle": "F Minor blues",
+  "subtitle": "A minor blues",
   "measure": "4/4",
-  "tone": "F-",
+  "tone": "Amin",
   "bars": [
     [ "\"D-7\"a2)z2z2zd", "^ggfd A2 c(d", "d8)", "\"D7\"z4 z d f(g" ],
     [ "\"G-7\"g2)z2z2zf", "g^ggf dAc(d", "\"D-7\"d8)", "z4 z d f(g" ],
-    [ "\"E-7b5\"g2)z2z2zf", "\"A7\"^ga d'3/4a1/4 ^g1/4g1/4f1/2 d1/4a1/4c1/2", "\"D-7\"d8", "\"E-7b5\"z4 z\"A7\" d f(a:|" ]
-  ]
+    [ "\"E-7b5\"g2)z2z2zf", "\"A7\"^ga d'3/4a1/4 ^g1/4g1/4f1/2 d1/4A1/4c1/2", "\"D-7\"d8", "\"E-7b5\"z4 z\"A7\" d f(a:|" ]
+  ],
+  "scales": {
+    "D": "pentatonicBlues"
+  }
 }

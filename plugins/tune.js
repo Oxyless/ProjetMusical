@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Bar from './bar'
+import Scale from './scale'
 
 class Tune {
   constructor({
@@ -7,13 +8,15 @@ class Tune {
     subtitle,
     measure,
     tone,
-    bars
+    bars,
+    scales
   }
   ) {
     this.title = title
     this.subtitle = subtitle
     this.measure = measure
     this.tone = tone
+    this.scales = scales
     this.bars = bars.map(barsLine =>
       barsLine.map(bar => 
         new Bar(bar)
@@ -22,7 +25,7 @@ class Tune {
   }
 
   toAbc() {
-    const abcTune = "X: 1\n" +
+    let abcTune = "X: 1\n" +
     `T: ${this.title}\n` +
     `M: ${this.measure}\n` +
     `L: 1/8\n` +
@@ -35,9 +38,19 @@ class Tune {
       // annotedLine.push("[V:2] " + barsLine.map(bar => bar.toAbcChords()).join("|"))
 
       return annotedLine.join("|\n")
-    }).join("|\n")
+    }).join("|\n") + "|\n"
 
     return abcTune
+  }
+
+  toAbcScales() {
+    if (this.scales) {
+      for (const [ note, scaleName ] of Object.entries(this.scales)) {
+        let scale = new Scale(note)
+        const scaleNotes = scale[scaleName]().map(note => `${note.toAbc()}2`)
+        abcTune += `"${note} ${scaleName}"${scaleNotes.join("")}\n`
+      }
+    }
   }
 }
 

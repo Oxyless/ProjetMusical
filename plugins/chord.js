@@ -36,19 +36,19 @@ export default class Chord {
         chord = chord.slice(score[0].length)
 
         if (chord.startsWith("maj") || chord.startsWith("+")) {
-          third = tonic.addInterval('majorThird')
-          seventh = tonic.addInterval('majorSeventh')
+          third = tonic.addInterval('thirdNajor')
+          seventh = tonic.addInterval('seventhMajor')
         } else if (chord.startsWith("-") || chord.startsWith("m")) {
-          third = tonic.addInterval('minorThird')
-          seventh = tonic.addInterval('minorSeventh')
+          third = tonic.addInterval('thirdMinor')
+          seventh = tonic.addInterval('seventhMinor')
           ninth = tonic.addInterval('ninth')
         }
       }
     }
 
     if (!third) {
-      third = tonic.addInterval('majorThird')
-      seventh = tonic.addInterval('minorSeventh')
+      third = tonic.addInterval('thirdMajor')
+      seventh = tonic.addInterval('seventhMinor')
       ninth = tonic.addInterval('ninth')
     }
 

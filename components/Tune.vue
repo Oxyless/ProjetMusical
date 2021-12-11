@@ -2,8 +2,6 @@
   <div>
     <div id="tune">
     </div>
-
-    {{ this.tune.toAbc() }}
   </div>
 </template>
 
@@ -12,6 +10,7 @@ export default {
   name: "Tune",
   mounted: function () {
     this.$abcjs.renderAbc("tune", this.tune.toAbc(), {})
+    this.$abcjs.renderAbc("tune2", this.tune.toAbc(), {})
   },
   props: [
     'tuneProfile'

@@ -2,7 +2,7 @@
   "title": "Blue In Green",
   "subtitle": "D Minor",
   "measure": "4/4",
-  "tone": "D-",
+  "tone": "",
   "bars": [
     [ "\"E-7\"c'6b2", "\"F#7#9\"a6g2", "\"B-7\"f6\"Bb7b5\"e2", "\"A-7\"d2\"D7(b9)\"b6" ],
     [ "\"Gmaj7(#11)\"c3 B ^ABdf", "\"F#7#9\"a6 f2", "\"B-7\"e6 d2" ],

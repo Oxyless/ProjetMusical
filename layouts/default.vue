@@ -26,6 +26,7 @@
     </v-navigation-drawer>
     <v-app-bar
       :clipped-left="clipped"
+      class="d-print-none"
       fixed
       app
     >
@@ -44,12 +45,13 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
     </v-app-bar>
-    <v-main>
+    <v-main class="main">
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
     <v-footer
+      class="d-print-none"
       :absolute="!fixed"
       app
     >
@@ -98,3 +100,11 @@ export default {
   }
 }
 </script>
+
+<style>
+  @media print {
+    .main {
+      padding-top: 0px !important
+    }
+  }
+</style>

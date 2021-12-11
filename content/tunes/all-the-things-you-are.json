@@ -1,6 +1,6 @@
 {
   "title": "All the thing you are",
-  "subtitle": "F",
+  "subtitle": "F Major",
   "measure": "4/4",
   "tone": "F",
   "bars": [
@@ -11,7 +11,7 @@
     [ "\"F#-7\"=b3a (a4", "\"B7\"a2)c2^c2a2", "\"Emaj7\"(^g8", "g2)=B2e2^g2"],
     [ "\"D#-7b5\"^g3 ^f (^f4", "\"G#7\"f2)G2^G2^f2", "\"C#maj7\"(f8", "\"A7#5\"f8)" ],
     [ "\"D-7\"f8", "\"G-7\"b6 f2", "\"C7\"e2e2e2e2", "\"Fmaj7\"e2a4e2" ],
-    [ "\"Bbmaj7\"d8", "\"Eb7\"c6b2", "\"A-7\"c2c2 (c2\"3\"c2c2)", "\"?\"e6d2" ],
-    [ "\"G-7\"B2B2d2f2", "\"C7\"d'4e4", "\"Fmaj7\"f8", "\"E-7b5\"z8|"]
+    [ "\"Bbmaj7\"d8", "\"Eb7\"c6b2", "\"A-7\"c2c2 (3c2 c2 c2", "\"?\"e6d2" ],
+    [ "\"G-7\"B2B2d2f2", "\"C7\"d'4e4", "\"Fmaj7\"f8", "\"E-7b5\"z8|" ]
   ]
 }

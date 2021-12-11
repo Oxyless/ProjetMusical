@@ -2,7 +2,7 @@
   "title": "One Cylinder",
   "subtitle": "A minor",
   "measure": "4/4",
-  "tone": "A-",
+  "tone": "Amin",
   "bars": [
     [ "z8" , "z8", "|:\"A-6\"z8", "z2z2z2za"],
     [ "d'zz2z2z2", "z8", "z2 ad' c'b ac'", "ba ga g^f ed" ],
