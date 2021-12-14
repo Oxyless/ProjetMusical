@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Bar from './bar'
 import Scale from './scale'
 
+
+import { CHORDS } from './constants/chords'
+
 class Tune {
   constructor({
     title,
@@ -22,6 +25,9 @@ class Tune {
         new Bar(bar)
       )
     )
+
+    const scale = new Scale("C")
+    console.log(CHORDS)
   }
 
   toAbc() {
@@ -35,10 +41,9 @@ class Tune {
       let annotedLine = []
 
       annotedLine.push("[V:1] " + barsLine.map(bar => bar.toAbc()).join("|"))
-      // annotedLine.push("[V:2] " + barsLine.map(bar => bar.toAbcChords()).join("|"))
 
       return annotedLine.join("|\n")
-    }).join("|\n") + "|\n"
+    }).join("|\n") + "\n"
 
     return abcTune
   }
