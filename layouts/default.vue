@@ -105,7 +105,9 @@ export default {
 <style>
   @media print {
     .main {
-      padding-top: 0px !important
+      padding-top: 0px !important;
+      padding-left: 0px !important;
+      padding-bottom: 0px !important;
     }
   }
 </style>

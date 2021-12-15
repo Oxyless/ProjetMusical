@@ -1,10 +1,15 @@
 <template>
-  <div>
-    <div v-for="(abcTune, index) in abcTunes" :key="abcTune">
-      <div :id="`tune_${index}`" class="tune mb-3">
+  <v-row no-gutters>
+    <v-col style="min-height: 28cm">
+      <div :id="`tune_${0}`" class="tune mb-3">
       </div>
-    </div>
-  </div>
+    </v-col>
+
+    <v-col>
+      <div v-for="(abcTune, index) in abcTunes.slice(0)" :key="abcTune" :id="`tune_${index}`" class="tune">
+      </div>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

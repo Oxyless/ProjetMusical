@@ -62,36 +62,4 @@ export const CHORDS = function() {
   return result
 }()
 
-// const majorChords = function(baseNote) {
-//   return {
-//     '1': { names: [ 'maj7' ], intervals: [ "tonic", "thirdMajor", "fifth", "seventhMajor" ] },
-//     '2': { names: [ '-7' ], intervals: [ "tonic", "thirdMinor", "fifth", "seventhMinor" ] },
-//     '3': { names: [ 'maj7' ], intervals: [ "tonic", "thirdMajor", "fifth", "seventhMajor" ] },
-//     '4': { names: [ 'maj7' ], intervals: [ "tonic", "thirdMajor", "fifth", "seventhMajor" ] },
-//     '5': { names: [ '7' ], intervals: [ "tonic", "thirdMajor", "fifth", "seventhMinor" ] },
-//     '6': { names: [ '-7' ], intervals: [ "tonic", "thirdMinor", "fifth", "seventhMinor" ] },
-//     '7': { names: [ '-7b5' ], intervals: [ "tonic", "thirdMinor", "fifthDiminished", "seventhMinor" ] }
-//   }
-// }
-
-// La mineur harmonique
-// 5eme 7eme -> on ajoute le sol#
-// la mineur naturel
-
-// mineur 7 b 5 demi diminué
-// le rond diminué -> 7eme degré gamme mineur
-
 // mineur 6/9 -> gamme mineur melodique ascendante
-
-// const minorChords = function(baseNote) {
-//   return {
-//     '1': { intervals: [ "tonic", "thirdMinor", "fifth", "seventhMinor" ] },
-//     '2': { intervals: [ "tonic", "thirdMinor", "fifthDiminished", "seventhMinor" ] },
-//     '3': { intervals: [ "tonic", "thirdMajor", "fifth", "seventhMajor" ] },
-//     '4': { intervals: [ "tonic", "thirdMinor", "fifth", "seventhMinor" ] },
-//     '5': { intervals: [ "tonic", "thirdMajor", "fifth", "seventhMajor" ] },
-//     '6': { intervals: [ "tonic", "thirdMajor", "fifth", "seventhMajor" ] },
-//     '7': { intervals: [ "tonic", "thirdMajor", "fifth", "seventhMinor" ] }
-//   }
-// }
-

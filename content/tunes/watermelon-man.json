@@ -8,5 +8,11 @@
     [ "\"G7\"d8", "z2DD AB z (D", "\"D7\"D8)", "z8"],
     [ "\"A7\"z2AA e2 f2", "\"G7\"=fedB d2 e2", "\"A7\"z2AA e2 f2", "\"G7\"=fedB A2 B2"],
     [ "\"A7\"z2AA e2 =f2", "\"G7\"d2 DD AB z (D", "\"D7\"D8)", "\"D7\"z8:|"]
+  ],
+  "chords": [
+    {
+      "tone": "D",
+      "scales": [ "D pentatonicMajor" ]
+    }
   ]
 }
