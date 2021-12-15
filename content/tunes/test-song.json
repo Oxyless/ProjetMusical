@@ -10,7 +10,10 @@
     {
       "tone": "D",
       "scales": [ "D pentatonicMajor" ],
-      "degrees": [ "D7", "G7", "A7" ]
+      "degrees": [ "D7", "G7", "A7" ],
+      "licks": [ 
+        "\"D-7\" c2" 
+      ]
     }
   ]
 }

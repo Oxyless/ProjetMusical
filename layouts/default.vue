@@ -47,21 +47,17 @@
       <v-toolbar-title v-text="title" />
     </v-app-bar>
     <v-main class="main">
-      <v-container>
+      <v-container fluid>
         <Nuxt />
       </v-container>
     </v-main>
-    <v-footer
-      class="d-print-none"
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    <Footer :fixed="fixed" />
   </v-app>
 </template>
 
 <script>
+import Footer from "./footer.vue"
+
 export default {
   data () {
     return {
@@ -74,6 +70,9 @@ export default {
       title: 'Projet Musical',
       tunes: []
     }
+  },
+  components: {
+    Footer
   },
   computed: {
     items() {

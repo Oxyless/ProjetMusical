@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="center" align="center">
+  <v-row justify="center">
     <v-col>
       <Tune :tuneProfile="tuneProfile" v-if="tuneProfile" />
     </v-col>

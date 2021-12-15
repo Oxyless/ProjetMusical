@@ -61,6 +61,7 @@ class Tune {
     for (const chordData of this.chords) {
       const abcDegrees = []
       const abcScales = []
+      const abcLicks = []
       const tone = chordData.tone
 
       if (chordData.degrees) {
@@ -89,14 +90,29 @@ class Tune {
         }
       }
 
+      if (chordData.licks) {
+        for (const lick of chordData.licks) {
+          abcLicks.push(lick)
+        }
+      }
+      
       if (abcScales.length > 0) {
-        abcScales.push("\n")
+        abcChords.push(`R: ${tone}\n` +
+        `K: ${tone}\n` +
+        abcScales.join("|"))
+      }
+      
+      if (abcDegrees.length > 0) {
+        abcChords.push(`R: ${tone}\n` +
+        `K: ${tone}\n` +
+        abcDegrees.join("|"))
       }
 
-      abcChords.push(`R: ${tone}\n` +
-      `K: ${tone}\n` +
-      abcScales.concat(abcDegrees).join("|"))
-      
+      if (abcLicks.length > 0) {
+        abcChords.push(`R: ${tone}\n` +
+        `K: ${tone}\n` +
+        abcLicks.join("|"))
+      }
     }
 
     return abcChords
