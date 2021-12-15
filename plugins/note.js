@@ -32,7 +32,7 @@ export default class Note {
       }
     }
 
-    console.log("bad", this.note, interval, destNote, notes)
+    return notes[0]
   }
 
   toAbc() {

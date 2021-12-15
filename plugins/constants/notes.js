@@ -9,7 +9,6 @@ export const scoreByNote = function () {
     scoreByNote[`${note}#`] = score + 0.5
     scoreByNote[note] = score
 
-
     if (["E", "B", "e", "b", "E,", "B,", "e'", "b'"].includes(note)) {
       score += 0.5
     } else {

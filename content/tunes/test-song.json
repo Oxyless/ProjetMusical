@@ -3,7 +3,7 @@
   "subtitle": "D blues",
   "measure": "4/4",
   "tone": "D",
-  "bars": [
+  "theme": [
     [ "\"D-7\"B,CDEFGABcdefga" ]
   ]
 }

@@ -1,13 +1,15 @@
-import { scoreByNote } from "./constants/notes"
-import Note from "./Note"
+import { CHORDS } from "./constants/chords"
 
 export default class Chord {
-  constructor(chord) {
-    this.chord = chord
+  constructor(name) {
+    this.name = name
+    this.chord = CHORDS[name]
+    this.notes = this.chord.notes
   }
 
-  toABc(duration = 8) {
-    const abc = `[${this.arpeggio.map(note => note.toAbc()).join("")}]${duration}`
+  toAbc() {
+    const abc = `${this.notes.map(note => note.toAbc()).join("")}`
+
     return abc
   }
 }

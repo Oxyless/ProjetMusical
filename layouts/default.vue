@@ -2,6 +2,7 @@
   <v-app light>
     <v-navigation-drawer
       v-model="drawer"
+      class="d-print-none"
       :mini-variant="miniVariant"
       :clipped="clipped"
       fixed

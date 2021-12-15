@@ -3,7 +3,7 @@
   "subtitle": "E",
   "measure": "4/4",
   "tone": "E",
-  "bars": [
+  "theme": [
     [
       "|:\"C#-7\"(g8",
       "g2) ee f g2 g1/2f1/2",

@@ -3,7 +3,7 @@
   "subtitle": "G Blues",
   "measure": "4/4",
   "tone": "G",
-  "bars": [
+  "theme": [
     [ "g2 g2 g2 g2", "g2 g2 g2 g2", ".g2 z2 z4", "z4 z2 .c'c'" ],
     [ "|:.a2 c'2 bafe", ".a2 c'2 bafe", ".a2z2z4", "z4 z2 .c'c'" ],
     [ ".a2 c'2 bafe", ".a2 c'2 bafe", ".a2z2z4", "z4 z2 .c'c'" ],

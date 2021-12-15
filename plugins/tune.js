@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Bar from './bar'
+import Chord from './chord'
 import Scale from './scale'
-
-
-import { CHORDS } from './constants/chords'
 
 class Tune {
   constructor({
@@ -11,27 +9,24 @@ class Tune {
     subtitle,
     measure,
     tone,
-    bars,
-    scales
+    theme,
+    chords
   }
   ) {
     this.title = title
     this.subtitle = subtitle
     this.measure = measure
     this.tone = tone
-    this.scales = scales
-    this.bars = bars.map(barsLine =>
+    this.chords = chords || []
+    this.bars = theme.map(barsLine =>
       barsLine.map(bar => 
         new Bar(bar)
       )
     )
-
-    const scale = new Scale("C")
-    console.log(CHORDS)
   }
 
-  toAbc() {
-    let abcTune = "X: 1\n" +
+  toAbcTheme() {
+    let toAbcTheme = "X: 1\n" +
     `T: ${this.title}\n` +
     `M: ${this.measure}\n` +
     `L: 1/8\n` +
@@ -39,23 +34,71 @@ class Tune {
     `K: ${this.tone} \n` +
     this.bars.map(barsLine => {
       let annotedLine = []
+      let abc = barsLine.map(bar => { 
+        let abcBar = bar.toAbc()
 
-      annotedLine.push("[V:1] " + barsLine.map(bar => bar.toAbc()).join("|"))
+        if (bar.chords) {
+          for (const chord of bar.chords) {
+            abcBar = abcBar.replace(`"${chord.name}"`, "")
+          }
+        }
 
-      return annotedLine.join("|\n")
-    }).join("|\n") + "\n"
+        return abcBar
+      }).join("|")
+      
+      
 
-    return abcTune
+      annotedLine.push("[V:1]" + abc + `${abc.endsWith(":|") ? '' : '|' }`)
+      annotedLine.push("[V:2] " + barsLine.map(bar => bar.toAbcChords()).join("|") + `${abc.endsWith(":|") ? ':|' : '|' }`)
+
+      return annotedLine.join("\n")
+    }).join("\n")
+
+    return toAbcTheme
   }
 
-  toAbcScales() {
-    if (this.scales) {
-      for (const [ note, scaleName ] of Object.entries(this.scales)) {
-        let scale = new Scale(note)
-        const scaleNotes = scale[scaleName]().map(note => `${note.toAbc()}2`)
-        abcTune += `"${note} ${scaleName}"${scaleNotes.join("")}\n`
+  toAbcChords() {
+    const abcChords = []
+
+    for (const chordData of this.chords) {
+      const abcDegrees = []
+      const abcScales = []
+      const tone = chordData.tone
+
+      if (chordData.degrees) {
+        for (const degree of chordData.degrees) {
+          const chord = new Chord(degree)
+          const abcChord = chord.toAbc()
+
+          abcDegrees.push(abcChord)
+        }
       }
+
+      if (chordData.scales) {
+        for (const scaleData of chordData.scales) {
+          const [baseNote, scaleName] = scaleData.split(" ")
+          const scale = new Scale(baseNote, scaleName)
+          const abcScale = scale.toAbc()
+
+          abcScales.push(abcScale)
+        }
+      }
+
+      if (abcScales.length > 0) {
+        abcScales.push("\n")
+      }
+
+      abcChords.push(`R: ${tone}\n` +
+      `K: ${tone}\n` +
+      abcScales.concat(abcDegrees).join("|"))
+      
     }
+
+    return abcChords
+  }
+
+  toAbc() {
+    return [ ].concat([this.toAbcTheme()], this.toAbcChords())
   }
 }
 

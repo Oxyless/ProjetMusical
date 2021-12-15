@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div id="tune">
+    <div v-for="(abcTune, index) in abcTunes" :key="abcTune">
+      <div :id="`tune_${index}`" class="tune mb-3">
+      </div>
     </div>
   </div>
 </template>
@@ -9,22 +11,26 @@
 export default {
   name: "Tune",
   mounted: function () {
-    this.$abcjs.renderAbc("tune", this.tune.toAbc(), {})
-    this.$abcjs.renderAbc("tune2", this.tune.toAbc(), {})
+    let index = 0
+
+    for (const abcTune of this.abcTunes) {
+      this.$abcjs.renderAbc(`tune_${index}`, abcTune, {})
+      index += 1
+    }
   },
   props: [
     'tuneProfile'
   ],
   data() {
     return {
-      tune: this.$initTune(...this.tuneProfile)
+      abcTunes: this.$initTune(...this.tuneProfile).toAbc()
     }
   }
 }
 </script>
 
 <style>
-  #tune {
+  .tune {
     background-color: white;
     width: 21cm;
   }

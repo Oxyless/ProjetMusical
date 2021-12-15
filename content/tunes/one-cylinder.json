@@ -3,10 +3,10 @@
   "subtitle": "A minor",
   "measure": "4/4",
   "tone": "Amin",
-  "bars": [
+  "theme": [
     [ "z8" , "z8", "|:\"A-6\"z8", "z2z2z2za"],
     [ "d'zz2z2z2", "z8", "z2 ad' c'b ac'", "ba ga g^f ed" ],
-    [ "czz4", "z8", "z8", "z8" ],
-    [ "z2 A eA eA eA", "eA eA ed cA", "azz2z2z2:|" ]
+    [ "czz2z2z2", "z8", "z8", "z8" ],
+    [ "zA eA eA eA", "eA eA ed cA", "azz2z2z2:|" ]
   ]
 }
