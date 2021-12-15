@@ -1,5 +1,5 @@
 <template>
-  <v-row no-gutters align="top">
+  <v-row no-gutters>
     <v-col class="main-tune" :cols="colSize">
       <div :id="`tune_${0}`" class="tune theme">
       </div>
