@@ -46,8 +46,6 @@ class Tune {
         return abcBar
       }).join("|")
       
-      
-
       annotedLine.push("[V:1]" + abc + `${abc.endsWith(":|") ? '' : '|' }`)
       annotedLine.push("[V:2] " + barsLine.map(bar => bar.toAbcChords()).join("|") + `${abc.endsWith(":|") ? ':|' : '|' }`)
 
@@ -75,10 +73,17 @@ class Tune {
       }
 
       if (chordData.scales) {
+        let scaleIndex = 1
+
         for (const scaleData of chordData.scales) {
           const [baseNote, scaleName] = scaleData.split(" ")
           const scale = new Scale(baseNote, scaleName)
-          const abcScale = scale.toAbc()
+          const nbScaleNote =  scale.notes.length
+          let abcScale = scale.toAbc()
+
+          if (nbScaleNote < 8) {
+            abcScale += ` z${8 - nbScaleNote}`
+          }
 
           abcScales.push(abcScale)
         }

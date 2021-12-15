@@ -1,6 +1,10 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
+  <v-row>
+    <v-col>
+      <img src="~/assets/images/blues.jpeg" />
+    </v-col>
+    <v-col>
+      <img src="~/assets/images/cercle.png" />
     </v-col>
   </v-row>
 </template>

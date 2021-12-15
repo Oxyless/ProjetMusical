@@ -8,5 +8,12 @@
     [ "d'zz2z2z2", "z8", "z2 ad' c'b ac'", "ba ga g^f ed" ],
     [ "czz2z2z2", "z8", "z8", "z8" ],
     [ "zA eA eA eA", "eA eA ed cA", "azz2z2z2:|" ]
+  ],
+  "chords": [
+    {
+      "tone": "Am",
+      "scales": [ "A harmonicMinor", "A dorian" ],
+      "degrees": [ ]
+    }
   ]
 }
