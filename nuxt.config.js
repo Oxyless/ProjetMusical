@@ -22,6 +22,10 @@ export default {
     ]
   },
 
+  router: {
+    base: '/ProjetMusical/'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
