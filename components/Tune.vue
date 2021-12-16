@@ -1,23 +1,26 @@
 <template>
-  <v-row no-gutters>
-    <v-col class="main-tune" :cols="colSize">
-      <div id="tune_0" class="tune theme">
-      </div>
+  <v-row :key="print" class="pa-3">
+    <v-col :cols="colSize">
+      <Sheet :abcTune="abcTunes[0]" :abcOptions="abcOptions" />
     </v-col>
 
-    <v-col :cols="colSize" class="pl-3">
-      <div v-for="(abcTune, index) in abcTunes.slice(1)" :key="abcTune" :id="`tune_${index + 1}`" class="tune mb-3">
-      </div>
+    <v-col :cols="colSize">
+      <Sheet v-for="(abcTune, index) in abcTunes.slice(1)" :key="abcTune" 
+        :abcTune="abcTune" 
+        :abcOptions="abcOptions"
+        class="tune mb-3"
+      />
 
       <v-textarea
         class="d-print-none free-textarea"
-        v-model="free"
-        @blur="saveFree"
+        v-model="abcFree"
       ></v-textarea>
 
-      <div id="tune_free" class="tune" v-if="free.length > 0">
-        {{ free }}
-      </div>
+      <Sheet v-if="abcFree.length > 0" 
+        :key="abcFree"
+        :abcTune="abcFree" 
+        class="tune" 
+      />
     </v-col>
   </v-row>
 </template>
@@ -28,43 +31,19 @@ export default {
   data() {
     return {
       abcTunes: this.$initTune(...this.tuneProfile).toAbc(),
-      free: ""
+      abcFree: ""
     }
   },
   mounted: function () {
-    this.renderAbc()
-    this.initFree()
+    this.abcFree = this.$route.query.abc ? atob(this.$route.query.abc) : localStorage.getItem(this.localstorageFreeKey) || ""
   },
   props: [
     'tuneProfile'
   ],
   watch: {
-    print() {
-      this.renderAbc()
-      this.renderAbcFree()
-    },
-    free(old, newVal) {
-      this.renderAbcFree()
-    }
-  },
-  methods: {
-    renderAbc() {
-      let index = 0
-
-      for (const abcTune of this.abcTunes) {
-        this.$abcjs.renderAbc(`tune_${index}`, abcTune, this.abcOptions)
-        index += 1
-      }
-    },
-    renderAbcFree() {
-      this.$abcjs.renderAbc("tune_free", this.free, this.abcOptions)
-    },
-    initFree() {
-      this.free = localStorage.getItem(this.localstorageFreeKey) || ""
-      setTimeout(() => this.renderAbcFree(), 0)
-    },
-    saveFree() {
-      localStorage.setItem(this.localstorageFreeKey, this.free)
+    abcFree(newVal) {
+      this.$router.push({ query: { abc: btoa(newVal) } })
+      localStorage.setItem(this.localstorageFreeKey, newVal)
     }
   },
   computed: {
@@ -84,41 +63,14 @@ export default {
       }
     },
     colSize() {
-      return (this.print ? '' : 6)
+      return (this.print ? 12 : 6)
     }
   }
 }
 </script>
 
 <style>
-  .tune {
-    background-color: white;
-  }
-
   .free-textarea {
-    width: 100%;
-  }
-
-  @media screen and (min-width: 1920px) {
-    .theme {
-      position: -webkit-sticky; /* Safari */
-      position: sticky;
-      top: 0px;
-    }
-  }
-
-  @media print {
-    .main-tune {
-      min-height: 29.5cm;
-    }
-
-    .tune {
-      width: 21cm;
-    }
-
-    .theme {
-      position: initial; /* Safari */
-      position: initial;
-    }
+    max-width: 21cm;
   }
 </style>
