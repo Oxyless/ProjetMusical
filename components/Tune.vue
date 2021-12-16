@@ -12,6 +12,7 @@
       <v-textarea
         class="d-print-none free-textarea"
         v-model="free"
+        @blur="saveFree"
       ></v-textarea>
 
       <div id="tune_free" class="tune" v-if="free.length > 0">
@@ -44,7 +45,6 @@ export default {
     },
     free(old, newVal) {
       this.renderAbcFree()
-      this.saveFree()
     }
   },
   methods: {
