@@ -30,9 +30,6 @@ export default {
       free: ""
     }
   },
-  async fetch() {
-    this.initFree()
-  },
   mounted: function () {
     this.renderAbc()
     this.initFree()
