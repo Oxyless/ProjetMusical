@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", (function(a){return {data:[{}],fetch:{"0":{clipped:a,drawer:a,fixed:a,miniVariant:a,right:true,rightDrawer:a,title:"Projet Musical",tunes:[]}},mutations:[]}}(false)));

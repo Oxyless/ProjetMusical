@@ -96,7 +96,7 @@ export default {
     }
   },
   async fetch() {
-    // this.tunes = await this.$content('tunes').only(['title']).sortBy('title').fetch()
+    this.tunes = await this.$content('tunes').only(['title']).sortBy('title').fetch()
   }
 }
 </script>
