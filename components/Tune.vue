@@ -31,8 +31,8 @@ export default {
     }
   },
   mounted: function () {
-    // this.renderAbc()
-    // this.initFree()
+    this.renderAbc()
+    this.initFree()
   },
   props: [
     'tuneProfile'
