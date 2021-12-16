@@ -30,8 +30,12 @@ export default {
       free: ""
     }
   },
+  async fetch() {
+    this.initFree()
+  },
   mounted: function () {
     this.renderAbc()
+    this.initFree()
   },
   props: [
     'tuneProfile'
@@ -41,8 +45,9 @@ export default {
       this.renderAbc()
       this.renderAbcFree()
     },
-    free(newVal, oldVal) {
+    free(old, newVal) {
       this.renderAbcFree()
+      this.saveFree()
     }
   },
   methods: {
@@ -56,10 +61,23 @@ export default {
     },
     renderAbcFree() {
       this.$abcjs.renderAbc("tune_free", this.free, this.abcOptions)
-
+    },
+    initFree() {
+      if (process.client) {
+        this.free = localStorage.getItem(this.localstorageFreeKey) || ""
+        setTimeout(() => this.renderAbcFree(), 0)
+      }
+    },
+    saveFree() {
+      if (process.client) {
+        localStorage.setItem(this.localstorageFreeKey, this.free)
+      }
     }
   },
   computed: {
+    localstorageFreeKey() {
+      return `${this.$route.path}_tune_free`
+    },
     print() {
       return this.$store.getters["options/getPrint"]
     },
