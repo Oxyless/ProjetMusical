@@ -32,12 +32,7 @@ export default {
   },
   mounted: function () {
     this.renderAbc()
-
-    try {
-      this.initFree()
-    } catch(e) {
-      console.error("can't init free")
-    }
+    // this.initFree()
   },
   props: [
     'tuneProfile'
