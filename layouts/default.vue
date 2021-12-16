@@ -88,7 +88,7 @@ export default {
         items.push({
           icon: 'mdi-music-note',
           title: tune.title,
-          to: '/tunes/' + tune.title
+          to: '/tunes/' + tune.uid
         })
       })
 
@@ -96,7 +96,7 @@ export default {
     }
   },
   async fetch() {
-    this.tunes = await this.$content('tunes').only(['title']).sortBy('title').fetch()
+    this.tunes = await this.$content('tunes').only(['title', 'uid']).sortBy('title').fetch()
   }
 }
 </script>
