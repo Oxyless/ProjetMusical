@@ -1,7 +1,9 @@
 <template>
   <v-row justify="center">
     <v-col>
-      <Tune :tuneProfile="tuneProfile" v-if="tuneProfile" />
+      <client-only>
+        <Tune :tuneProfile="tuneProfile" v-if="tuneProfile" />
+      </client-only>
     </v-col>
   </v-row>
 </template>

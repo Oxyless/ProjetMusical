@@ -1,7 +1,7 @@
 <template>
   <v-row no-gutters>
     <v-col class="main-tune" :cols="colSize">
-      <div :id="`tune_${0}`" class="tune theme">
+      <div id="tune_0" class="tune theme">
       </div>
     </v-col>
 
@@ -32,7 +32,12 @@ export default {
   },
   mounted: function () {
     this.renderAbc()
-    this.initFree()
+
+    try {
+      this.initFree()
+    } catch(e) {
+      console.error("can't init free")
+    }
   },
   props: [
     'tuneProfile'
@@ -60,15 +65,11 @@ export default {
       this.$abcjs.renderAbc("tune_free", this.free, this.abcOptions)
     },
     initFree() {
-      if (process.client) {
-        this.free = localStorage.getItem(this.localstorageFreeKey) || ""
-        setTimeout(() => this.renderAbcFree(), 0)
-      }
+      this.free = localStorage.getItem(this.localstorageFreeKey) || ""
+      setTimeout(() => this.renderAbcFree(), 0)
     },
     saveFree() {
-      if (process.client) {
-        localStorage.setItem(this.localstorageFreeKey, this.free)
-      }
+      localStorage.setItem(this.localstorageFreeKey, this.free)
     }
   },
   computed: {

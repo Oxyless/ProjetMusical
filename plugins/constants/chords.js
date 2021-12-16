@@ -6,6 +6,7 @@ const chords = {
   "maj7": { intervals: [ "root", "thirdMajor", "fifth", "seventhMajor" ] },
   "min7": { intervals: [ "root", "thirdMinor", "fifth", "seventhMinor" ] },
   "7": { intervals: [ "root", "thirdMajor", "fifth", "seventhMinor" ] },
+  "7b9": { intervals: [ "root", "thirdMajor", "fifth", "seventhMinor", "ninthDiminished" ] },
   "min7b5": { intervals: [ "root", "thirdMinor", "fifthDiminished", "seventhMinor" ] },
   "min7maj7": { intervals: [ "root", "thirdMinor", "fifth", "seventhMajor" ] },
   "6": { intervals: [ "root", "thirdMajor", "fifth", "sixthMajor" ] },
