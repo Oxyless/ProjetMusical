@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted: function () {
-    this.renderAbc()
+    // this.renderAbc()
     // this.initFree()
   },
   props: [
