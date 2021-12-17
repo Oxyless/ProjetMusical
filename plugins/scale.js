@@ -11,7 +11,7 @@ export default class Scale {
 
 
   toAbc() {
-    const abc = `"${this.baseNote} ${this.scaleName}"${this.notes.map(note => `${note.toAbc()}`).join("")}`
+    const abc = `"${this.baseNote} ${this.scaleName}"${this.notes.map(note => `${note.toAbc()}2`).join("|")}`
     return abc
   }
 }

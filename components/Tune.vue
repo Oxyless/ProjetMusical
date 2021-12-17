@@ -1,14 +1,16 @@
 <template>
   <v-row :key="print" class="pa-3">
     <v-col :cols="colSize">
-      <Sheet :abcTune="abcTunes[0]" :abcOptions="abcOptions" />
+      {{ $route.path }}
+      <Sheet :abcTune="abcTunes[0]" :abcOptions="abcOptions" :style="print ? { maxWidth: '21cm' } : {}" />
     </v-col>
 
     <v-col :cols="colSize">
       <Sheet v-for="(abcTune, index) in abcTunes.slice(1)" :key="abcTune" 
         :abcTune="abcTune" 
         :abcOptions="abcOptions"
-        class="tune mb-3"
+        class="mb-3"
+        :style="print ? { maxWidth: '21cm' } : {}"
       />
 
       <v-textarea
@@ -20,6 +22,7 @@
         :key="abcFree"
         :abcTune="abcFree" 
         class="tune" 
+        :style="print ? { maxWidth: '21cm' } : {}"
       />
     </v-col>
   </v-row>
@@ -55,7 +58,9 @@ export default {
     },
     abcOptions() {
       if (this.print) {
-        return { }
+        return {
+          add_classes: true
+        }
       } else {
         return {
           responsive: 'resize'

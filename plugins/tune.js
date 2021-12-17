@@ -10,13 +10,15 @@ class Tune {
     measure,
     tone,
     theme,
-    chords
+    chords,
+    tempo
   }
   ) {
     this.title = title
     this.subtitle = subtitle
     this.measure = measure
     this.tone = tone
+    this.tempo = (tempo ? tempo / 2 : 90)
     this.chords = chords || []
     this.bars = theme.map(barsLine =>
       barsLine.map(bar => 
@@ -28,6 +30,7 @@ class Tune {
   toAbcTheme() {
     let toAbcTheme = "X: 1\n" +
     `T: ${this.title}\n` +
+    `Q: 1/2=${this.tempo}\n`+
     `M: ${this.measure}\n` +
     `L: 1/8\n` +
     `R: ${this.subtitle}\n` +
@@ -81,10 +84,6 @@ class Tune {
           const scale = new Scale(baseNote, scaleName)
           const nbScaleNote =  scale.notes.length
           let abcScale = scale.toAbc()
-
-          if (nbScaleNote < 8) {
-            abcScale += ` z${8 - nbScaleNote}`
-          }
 
           abcScales.push(abcScale)
         }
