@@ -3,7 +3,6 @@
     <div :id="audioId" class="abc-tune" />
     <div :id="tuneId" class="abc-sheet" />
 
-
     <v-btn icon small :ripple="false" class="loop" @click="toggleLoop">
       <v-icon :color="loop ? 'success' : ''">mdi-infinity</v-icon>
     </v-btn>

@@ -1,7 +1,6 @@
 <template>
   <v-row :key="print" class="pa-3">
     <v-col :cols="colSize">
-      {{ $route.path }}
       <Sheet :abcTune="abcTunes[0]" :abcOptions="abcOptions" :style="print ? { maxWidth: '21cm' } : {}" />
     </v-col>
 
