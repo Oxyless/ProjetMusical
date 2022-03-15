@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a){return {staticAssetsBase:"\u002FProjetMusical\u002F_nuxt\u002Fstatic\u002F1639758092",layout:"default",error:a,state:{options:{print:false}},serverRendered:true,routePath:"\u002Ftunes\u002Fblue_in_green",config:{_app:{basePath:"\u002FProjetMusical\u002F",assetsPath:"\u002FProjetMusical\u002F_nuxt\u002F",cdnURL:a},content:{dbHash:"fb587408"}}}}(null));
